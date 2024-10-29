@@ -1,0 +1,194 @@
+body {
+    margin: 0;
+    padding: 0;   
+}
+
+
+.Fondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Coloca la imagen detrás del contenido */
+    
+}
+
+.logo {
+    display: inline-block; /* Esto asegura que el enlace abarque solo el tamaño de la imagen */
+}
+
+
+.logo img{
+    width: 300px;
+    height: auto;
+    position: relative;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+}
+
+/* Estilo para el contenedor del menú */
+.menu {
+    display: flex;
+    background-color: transparent;
+    padding: 10px;
+    position: fixed;
+    top: 10px; /* Ajusta la posición vertical */
+    right: 10px; /* Ajusta la posición horizontal */
+}
+
+/* Estilo para los elementos del menú */
+.menuItem {
+    position: relative;
+    margin-right: 20px;
+}
+
+/* Estilo para el botón principal del menú */
+.menuButton {
+    font-family: 'Gilroy-Bold', sans-serif;
+    font-size: 1.35rem;
+    background-color: #46c90e;
+    background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer; /* Indica que el cursor cambia a un dedo (pointer) al pasar sobre el botón */
+}
+
+/* Estilo para el submenú */
+.submenu {
+    font-family: 'Gilroy-Bold', sans-serif;
+    font-size: 1.35rem;
+    display: none;
+    position: absolute;
+    top: 50px; /* Ajusta la separación vertical entre el botón y el submenú */
+    left: 0;
+    color: white;
+    background-color: #46c90e;
+    background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+    border-radius: 10px;
+    width: 200px; /* Ajusta el ancho del submenú según tus necesidades */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Añade sombra al submenú para destacarlo */
+}
+
+/* Muestra el submenú cuando el mouse pasa sobre el elemento del menú principal */
+.menuItem:hover .submenu {
+    display: block;
+}
+
+/* Estilo para los elementos de enlace dentro del submenú */
+.submenu a {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid #444; /* Añade un borde inferior a los elementos de enlace */
+}
+
+/* Elimina el borde inferior del último elemento de enlace en el submenú */
+.submenu a:last-child {
+    border-bottom: none;
+}
+
+
+/* Estilo para hacer que la página sea más responsive */
+@media only screen and (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        position: static; /* Cambia la posición a estática para que no esté fijo en la parte superior */
+        margin-top: 20px; /* Añade margen en la parte superior para separar del contenido anterior */
+    }
+
+    .menuItem {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .submenu {
+        position: static;
+        display: none;
+        width: 100%;
+        background: #46c90e;
+        box-shadow: none; /* Elimina la sombra en pantallas pequeñas */
+    }
+
+    .menuItem:hover .submenu {
+        display: block;
+        position: static;
+    }
+
+    .submenu a {
+        border-bottom: 1px solid #444;
+    }
+
+    .logo img {
+        width: 250px; /* Ajusta el tamaño del logo según tus necesidades */
+        position: static;
+        margin-bottom: 20px;
+    }
+
+    .Fondo img {
+        height: auto;
+        object-fit: cover;
+        
+    }
+
+    .Descripcion {
+        text-align: center; /* Alinea el texto al centro en pantallas pequeñas */
+        position: static;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        color: white;
+        font-family: 'Gilroy-Regular', sans-serif;
+        font-size: 40px;
+    }
+
+    .Descripcion h1 {
+        font-size: 48px; /* Ajusta el tamaño del título en pantallas pequeñas */
+        margin-bottom: 10px; /* Añade espacio entre el título y el párrafo */
+        font-family: 'Gilroy-Bold', sans-serif;
+        text-align: center;
+        width: 100%;
+    } 
+}
+@media only screen and (min-width: 769px) {
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh; /* Ajusta según sea necesario */
+    }
+
+    .menu {
+        flex-direction: row;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+    }
+
+    .Descripcion {
+        text-align: center;
+        max-width: 1000px; /* Ajusta según sea necesario */
+        margin: 50px auto; /* Centra horizontalmente y agrega margen arriba y abajo */
+        color: white;
+        font-family: 'Gilroy-Regular', sans-serif;
+        font-size: 40px;
+        position: relative;
+        top: -50px;
+        z-index: -1;
+    }
+
+    .Descripcion h1 {
+        font-size: 48px;
+        margin-bottom: 10px;
+        font-family: 'Gilroy-Bold', sans-serif;
+        position: relative;
+        top: -50px;
+
+    }
+}
